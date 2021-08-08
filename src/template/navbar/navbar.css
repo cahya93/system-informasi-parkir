@@ -1,0 +1,55 @@
+@font-face {
+  font-family: fontLogo;
+  src: url(./Pacho.ttf);
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgba(0, 0, 0, 0.692);
+  overflow: hidden;
+}
+
+.topnav > .logo {
+  float: left;
+  text-align: center;
+  text-decoration: none;
+  font-size: x-large;
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: fontLogo;
+  background: -webkit-linear-gradient(yellow, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.topnav .logo span img {
+  width: 30px;
+  position: relative;
+}
+.topnav .logo span .text-logo {
+  margin-top: 0;
+}
+/* Right-aligned section inside the top navigation */
+.topnav-right .menu {
+  color: white;
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.topnav-right > .menu {
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.topnav-right .menu.active {
+  color: rgb(255, 251, 10);
+  cursor: pointer;
+}
+.topnav-right > .menu:last-child {
+  margin-right: 0;
+}
