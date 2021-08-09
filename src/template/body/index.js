@@ -21,13 +21,13 @@ class Body extends Component {
     console.log("Status", loginStatus);
     return (
       <Switch>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route path="/about">
+        <Route exact path="/" component={Home} />
+        {/* <Home /> */}
+        {/* </Route> */}
+        <Route exact path="/about">
           <About />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login changeStat={this.props.changeStatus} />
         </Route>
         <Route

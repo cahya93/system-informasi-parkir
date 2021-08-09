@@ -55,11 +55,11 @@ class Navbar extends Component {
     return (
       <>
         <div className="topnav">
-          <Link to="/home" className="logo">
+          <Link to="/" className="logo">
             Parking System
           </Link>
           <div className="topnav-right">
-            <Link to="/home">
+            <Link to="/">
               <div className={`menu ${currentPage === "home" ? "active" : ""}`}>
                 Home
               </div>
