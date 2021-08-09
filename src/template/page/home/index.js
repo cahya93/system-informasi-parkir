@@ -14,7 +14,15 @@ class Home extends Component {
       <>
         <Container>
           <div>
-            <h1>Welocme to System Parkir Berbasis Web</h1>
+            <div className="welcome">Welcome to System Parkir Berbasis Web</div>
+            <div>By Cahya93</div>
+          </div>
+          <div>
+            <p>System ini dibangun menggunakan:</p>
+            <ul>
+              <li>React Js</li>
+              <li>Firebase</li>
+            </ul>
           </div>
         </Container>
       </>

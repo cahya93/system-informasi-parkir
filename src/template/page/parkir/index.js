@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { FirebaseContext } from "../../../config/firebase";
-import Jam from "../parkir/jam";
+import Jam from "./jam";
+import Masuk from "./masuk";
 import Swal from "sweetalert2";
 
 class ParkirFirebase extends Component {
@@ -83,7 +84,6 @@ class ParkirFirebase extends Component {
                   ...vehicle,
                   ...objData,
                 };
-
               return vehicle;
             });
           }
@@ -109,42 +109,17 @@ class ParkirFirebase extends Component {
   }
 
   render() {
-    const { license, type } = this.state;
+    const style = {
+      marginBottom: "25px",
+    };
     return (
       <>
         <Grid container spacing={3}>
           <Grid item xs={5}>
             <Paper>
-              <h1>Parkir Masuk</h1>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>License</td>
-                    <td>
-                      <input
-                        type="text"
-                        name="license"
-                        value={license}
-                        onChange={this.setValue}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Type</td>
-                    <td>
-                      <select name="type" value={type} onChange={this.setValue}>
-                        <option value="Car">Car</option>
-                        <option value="Motorcycle">Motorcycle</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2" align="center">
-                      <button onClick={this.onSaveHandler}>Save</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className={style}>
+                <Masuk />
+              </div>
             </Paper>
           </Grid>
           <Grid item xs={5}>

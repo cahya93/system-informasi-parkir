@@ -50,7 +50,7 @@ class LoginFirebase extends Component {
         .then((res) => Swal.fire("Registrasi Success", res, "success"))
         .then((res) => console.log("res:", res))
         .catch((err) => alert(err.message));
-    } else alert("Field ada yang kosong");
+    } else Swal.fire("Ops..!", "Isi semua dulu ya..", "warning");
   };
   checkFirebase = () => {
     return (a) => {
@@ -135,11 +135,6 @@ class LoginFirebase extends Component {
                   <Grid item xs>
                     <Link to="/forgot-password" variant="body2">
                       Forgot password?
-                    </Link>
-                  </Grid>
-                  <Grid item>
-                    <Link to="/register/_add" variant="body2">
-                      {"Don't have an account? Sign Up"}
                     </Link>
                   </Grid>
                 </Grid>

@@ -22,11 +22,7 @@ class Body extends Component {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        {/* <Home /> */}
-        {/* </Route> */}
-        <Route exact path="/about">
-          <About />
-        </Route>
+        <Route exact path="/about" component={About} />
         <Route exact path="/login">
           <Login changeStat={this.props.changeStatus} />
         </Route>
@@ -34,9 +30,7 @@ class Body extends Component {
           path="/register/:id"
           children={(props) => <Register {...props} />}
         />
-        <Route path="/parkir">
-          <Parkir />
-        </Route>
+        <Route path="/parkir" component={Parkir} />
       </Switch>
     );
   };
