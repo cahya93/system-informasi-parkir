@@ -19,9 +19,9 @@ export default function App() {
   }, []);
   return (
     <div>
-      <h1>
+      <h2>
         {dateTime.hours}:{dateTime.minutes}:{dateTime.seconds} WIB
-      </h1>
+      </h2>
     </div>
   );
 }

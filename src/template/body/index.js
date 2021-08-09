@@ -21,12 +21,8 @@ class Body extends Component {
     console.log("Status", loginStatus);
     return (
       <Switch>
-        <Route path="/home" exact>
-          <Home
-            datas={this.state.productList}
-            dataBeli={this.addDataPembelian}
-            sendData={this.state.dataPembelian}
-          />
+        <Route exact path="/home">
+          <Home />
         </Route>
         <Route path="/about">
           <About />

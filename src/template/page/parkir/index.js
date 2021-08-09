@@ -15,6 +15,13 @@ class ParkirFirebase extends Component {
     };
     this.subscribeVehicles = "";
   }
+  convertRp = (e) => {
+    const format = e.toString().split("").reverse().join(""); //diformat ke dalam string
+    const convert = format.match(/\d{1,3}/g); //ambil 3 angka
+    const rupiah =
+      "Rp " + convert.join(".").split("").reverse().join("") + ",00"; //join hasil format dan ambil 3 angka
+    return rupiah;
+  };
   onSaveHandler = async () => {
     const { license, type } = this.state;
     const res = await this.props.firebase.saveFirestoreVehicle({
@@ -42,6 +49,7 @@ class ParkirFirebase extends Component {
       let data = vehicle.data();
       vehicleList.push({
         id: vehicle.id,
+        price: 0,
         ...data,
       });
     });
@@ -64,6 +72,7 @@ class ParkirFirebase extends Component {
           if (change.type === "added") {
             vehicleList.push({
               id: idData,
+              price: 2000,
               ...objData,
             });
           }
@@ -171,7 +180,7 @@ class ParkirFirebase extends Component {
                   <td>{parkir.type}</td>
                   <td>{parkir.dateIn}</td>
                   <td>{parkir.dateOut}</td>
-                  <td>{parkir.price}</td>
+                  <td>{this.convertRp(parkir.price)}</td>
                 </tr>
               );
             })}
